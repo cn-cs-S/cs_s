@@ -1,4 +1,14 @@
-#include<stdio.h>
+#include<iostream>
+#include<algorithm>
+#include<string>
+#include<vector>
+using namespace std;
+
+//此篇通过程序展示各种情况下函数和表达式的返回值
+//用途：计算bool值或一些可能其他用途
+//包括一些基础的语法知识
+//以下程序均省略std；
+
 int main()
 {
     int a,b,c;
@@ -25,4 +35,7 @@ int main()
 //形如这种的逻辑嵌套的返回值为响应的语句执行后的变量值
 //注意++前置和后置的区别
     
+    
+    
+    return 0;
 }
