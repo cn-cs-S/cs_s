@@ -3,6 +3,7 @@
 #include<time.h>
 void input(void)
 {
+    
     for (int i = 0; i < 12; i++)
     {
         printf("%3.1lf ",(double)(rand()%91+10)/10);
@@ -11,7 +12,16 @@ void input(void)
 }
 int main()
 {
-    for (int i = 0; i < 10; i++)
+    int n=rand()%50+10;
+    printf("%d\n",n);
+    char x='A';
+    for (int i = 0; i < n; i++)
+    {
+        printf("%c %c%c %c%c%c\n",x,x,x,x,x,x);
+        x++;
+    }
+    
+    for (int i = 0; i < n; i++)
     {
         input();
         printf("\n");
