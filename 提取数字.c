@@ -1,25 +1,25 @@
-#include<stdio.h>
-#include<ctype.h>
-#include<stdlib.h>
-#include<string.h>
+#include <stdio.h>
+#include <ctype.h>
+#include <stdlib.h>
+#include <string.h>
 int main()
 {
     char str[1000];
     gets(str);
-    int len=strlen(str);
-    char *pstr=str;
-    while (/*(*/*(pstr++) /*= getchar())!='\n'*/)
+    int len = strlen(str);
+    char *pstr = str;
+    while (/*(*/ *(pstr++) /*= getchar())!='\n'*/)
     {
-        if (!isdigit(*(pstr-1)))
+        if (!isdigit(*(pstr - 1)))
         {
-            *(pstr-1)=0;
+            *(pstr - 1) = 0;
         }
     }
-    pstr=str;
+    pstr = str;
     //int temp=30;
-    while (pstr!=&str[len])
+    while (pstr != &str[len])
     {
-        while (!*pstr&&pstr!=&str[len])
+        while (!*pstr && pstr != &str[len])
         {
             pstr++;
         }
@@ -27,9 +27,9 @@ int main()
         {
             break;
         }
-        
-        printf("%8d",atoi(pstr));
-        while (*pstr&&pstr!=&str[len])
+
+        printf("%8d", atoi(pstr));
+        while (*pstr && pstr != &str[len])
         {
             pstr++;
         }
@@ -38,12 +38,7 @@ int main()
             printf("\nerror\n");
             break;
         }*/
-        
     }
-    
-    
-    
+
     return 0;
-    
-    
 }
