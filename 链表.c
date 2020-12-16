@@ -1,60 +1,64 @@
-#include<stdio.h>
-#include<stdlib.h>
-typedef struct student  //定义结构体，包含数据域和指针域
-{
-    int score;          //数据域
-    struct student *next;//指针域
-    
-}LinkList;
+#include <stdio.h>
+#include <stdlib.h>
 
-LinkList *creat(int n)  //创建链表函数
+//*有序双向链表
+/*
+*单向链表暂时不知道怎么搞qwq
+*感觉自己的方法思路对但是过程麻烦了
+*运用牛逼的百度的时候到了(还有google)
+*链表不好操作啊^_^
+*以下均有注释(注释比代码长系列)
+*/
+typedef struct student              //&创建结构体
 {
-    LinkList *head,*node,*end;//定义头指针，子指针，尾指针
-    head=(LinkList*)malloc(sizeof(LinkList));//为头指针分配空间
-    end=head;                   //若为空，则头尾相等
-    //过程中，可认为end指针偏移，而不只是尾指针
-    for (int i = 0; i < n; i++) //输入链表
+    int score;
+    struct student *pre;
+    struct student *next;
+} LinkList;
+
+LinkList *creat(int n)              //&创建链表函数
+{
+    LinkList *head, *node, *end;                    //定义头指针，子指针，尾指针
+    head = (LinkList *)calloc(1, sizeof(LinkList)); //为头指针分配空间
+    end = head;                                     //若为空，则头尾相等
+    for (int i = 0; i < n; i++)                     //输入链表
     {
-        node = (LinkList*)malloc(sizeof(LinkList));//为子指针分配空间，注：node为指针类型
-        scanf("%d",&node->score);   //输入子指针的数据
-        if (head==end)
+        node = (LinkList *)calloc(1, sizeof(LinkList)); //为子指针分配空间，注：node为指针类型
+        scanf("%d", &node->score);                      //输入子指针的数据
+        LinkList *h = head;                             //!有序链表核心，遍历链表，插入元素
+        int leap = 1;                       //标志变量(或许不需要？)
+        while (h->next != NULL)             //^这个判断可以判断是不是空链表
         {
-            end->next=node;
-            end=node;
-            continue;
-        }
-        
-        LinkList *temp=head;
-        while (temp->next != NULL)
-        {
-            temp=temp->next;
-            if (node->score<temp->next->score)
+            h = h->next;                    //遍历
+            if (node->score < h->score)     //^若满足条件就插入元素
             {
-                node->next=temp->next;
-                temp->next=node;
+                node->pre = h->pre;         
+                h->pre->next = node;        
+                h->pre = node;              
+                node->next = h;             
+                leap = 0;                   
                 break;
             }
         }
-        if (node == NULL)
+        if (leap)                           //^若没操作则插入链表的最后面
         {
-            end->next=node;
+            node->pre = end;
+            end->next = node;
+            end = node;
         }
-        end=node;               //令指针指向当前指针
     }
-    end->next=NULL;             //尾指针的指针域赋空
-    return head;                //返回头指针，注：返回值为指针类型
+    end->next = NULL; //尾指针的指针域赋空
+    return head;      //返回头指针，注：返回值为指针类型
 }
 
 int main()
 {
-    int m=5;
-    LinkList *head=creat(m);//遍历链表
+    int m = 5;
+    LinkList *head = creat(m); //遍历链表
     while (head->next!=NULL)
     {
         head=head->next;
         printf("%3d",head->score);
     }
     return 0;
-    
-    
 }
