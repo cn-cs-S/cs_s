@@ -34,10 +34,10 @@ int main()
             pstr++;
         }
         /*if (!--temp)
-        {
-            printf("\nerror\n");
-            break;
-        }*/
+{
+printf("\nerror\n");
+break;
+}*/
     }
 
     return 0;

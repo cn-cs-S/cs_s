@@ -17,7 +17,28 @@ LinkList *creat(int n)  //创建链表函数
     {
         node = (LinkList*)malloc(sizeof(LinkList));//为子指针分配空间，注：node为指针类型
         scanf("%d",&node->score);   //输入子指针的数据
-        end->next=node;         //令前一个指针的指针指向子指针
+        if (head==end)
+        {
+            end->next=node;
+            end=node;
+            continue;
+        }
+        
+        LinkList *temp=head;
+        while (temp->next != NULL)
+        {
+            temp=temp->next;
+            if (node->score<temp->next->score)
+            {
+                node->next=temp->next;
+                temp->next=node;
+                break;
+            }
+        }
+        if (node == NULL)
+        {
+            end->next=node;
+        }
         end=node;               //令指针指向当前指针
     }
     end->next=NULL;             //尾指针的指针域赋空
@@ -26,7 +47,7 @@ LinkList *creat(int n)  //创建链表函数
 
 int main()
 {
-    int m=3;
+    int m=5;
     LinkList *head=creat(m);//遍历链表
     while (head->next!=NULL)
     {
