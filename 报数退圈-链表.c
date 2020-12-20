@@ -1,15 +1,15 @@
 #include <stdio.h>
 #include <stdlib.h>
-typedef struct people
+typedef struct people       //&双向链表
 {
     int id;
     struct people *pre;
     struct people *next;
 } people;
 
-const int len = sizeof(people);
+const int len = sizeof(people);     //防止重复计算
 
-people *creat(const int m)
+people *creat(const int m)          //&创建链表
 {
     people *head, *end, *node;
     head = (people *)calloc(1, len);
@@ -28,29 +28,29 @@ people *creat(const int m)
     return head;
 }
 
-int print(people *head)
+int print(people *head)     //&退圈
 {
-    static int num = 0;
-    while (head->next != head)
+    static int num = 0;     //?越长越好看系列
+    while (head->next != head)  //^当只剩一个人的时候指向的应该是自己
     {
-        if (++num % 3 == 0)
+        if (++num % 3 == 0)     //^退圈
         {
-            people *temp = head;
-            head->pre->next = head->next;
-            head->next->pre = head->pre;
-            head = head->next;
-            free(temp);
-            temp = NULL;
+            people *temp = head;    //临时变量用于free
+            head->pre->next = head->next;//上一个元素指向下一个
+            head->next->pre = head->pre;//下一个元素指向上一个
+            head = head->next;//移动指针
+            free(temp);       //!释放内存,要给释放的内存赋NULL
+            temp = NULL;      
             continue;
         }
         head = head->next;
     }
-    return head->id;
+    return head->id;        //返回剩下的id
 }
 
 int main(void)
 {
-    const int m = 10000;
+    const int m = 10000;    //?越长越好看系列
     people *head = creat(m);
     printf("%d\n", print(head));
     return 0;
