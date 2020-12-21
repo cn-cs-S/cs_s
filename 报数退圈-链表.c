@@ -9,7 +9,7 @@ typedef struct people       //&双向链表
 
 const int len = sizeof(people);     //防止重复计算
 
-people *creat(const int m)          //&创建链表
+people *creat(const int m)          //&创建循环链表
 {
     people *head, *end, *node;
     head = (people *)calloc(1, len);
@@ -28,6 +28,22 @@ people *creat(const int m)          //&创建链表
     return head;
 }
 
+int print(people *head)
+{
+    while (head->next!=head)
+    {
+        head=head->next->next;
+        people *temp=head;
+        head->pre->next=head->next;
+        head->next->pre=head->pre;
+        free(temp);
+        temp=NULL;
+        head=head->next;
+    }
+    return head->id;
+}
+
+/*
 int print(people *head)     //&退圈
 {
     static int num = 0;     //?越长越好看系列
@@ -47,10 +63,10 @@ int print(people *head)     //&退圈
     }
     return head->id;        //返回剩下的id
 }
-
+*/
 int main(void)
 {
-    const int m = 10000;    //?越长越好看系列
+    const int m = 100;    //?越长越好看系列
     people *head = creat(m);
     printf("%d\n", print(head));
     return 0;
