@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
-typedef struct people       //&双向链表
+
+typedef struct people       //&双向链表Z
 {
     int id;
     struct people *pre;
@@ -64,6 +65,7 @@ int print(people *head)     //&退圈
     return head->id;        //返回剩下的id
 }
 */
+
 int main(void)
 {
     const int m = 100;    //?越长越好看系列

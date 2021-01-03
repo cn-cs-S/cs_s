@@ -2,5 +2,6 @@
     "files.associations": {
         "iostream": "cpp"
     },
-    "powermode.enabled": true
+    "powermode.enabled": true,
+    "files.autoGuessEncoding": true
 }
