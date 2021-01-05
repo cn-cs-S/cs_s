@@ -8,6 +8,7 @@
 			"args": [
 				"-g",
 				"${file}",
+				"StudentManagement.cpp",
 				"-o",
 				"${fileDirname}\\${fileBasenameNoExtension}.exe"
 			],
@@ -19,6 +20,24 @@
 			],
 			"group": "build",
 			"detail": "compiler: D:\\C\\mingw64\\bin\\gcc.exe"
-		}
+		},
+		{
+            "label": "build",
+            "command": "make",
+            "args": ["default"],
+            "type": "shell"
+        },
+        {
+            "label": "build-debug",
+            "command": "make",
+            "args": ["debug"],
+            "type": "shell"
+        },
+        {
+            "label": "clean",
+            "command": "make",
+            "args": ["clean"],
+            "type": "shell"
+        }
 	]
 }

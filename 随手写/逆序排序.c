@@ -9,5 +9,4 @@ void sort(int *p,int n)
         *(p+i++)=*(p+n-1-i++);
         *(p+n-1-i++)=t;
     }
-    
 }

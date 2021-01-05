@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-typedef struct people       //&双向链表Z
+typedef struct people       //&双向链表
 {
     int id;
     struct people *pre;
@@ -68,7 +68,7 @@ int print(people *head)     //&退圈
 
 int main(void)
 {
-    const int m = 100;    //?越长越好看系列
+    const int m = 1000;    //?越长越好看系列
     people *head = creat(m);
     printf("%d\n", print(head));
     return 0;
