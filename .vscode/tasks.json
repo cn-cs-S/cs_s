@@ -7,7 +7,7 @@
 			"command": "D:\\C\\mingw64\\bin\\gcc.exe",
 			"args": [
 				"-g",
-				"${file}",
+				"${fileDirname\\*.cpp}",
 				"StudentManagement.cpp",
 				"-o",
 				"${fileDirname}\\${fileBasenameNoExtension}.exe"
@@ -22,22 +22,47 @@
 			"detail": "compiler: D:\\C\\mingw64\\bin\\gcc.exe"
 		},
 		{
-            "label": "build",
-            "command": "make",
-            "args": ["default"],
-            "type": "shell"
-        },
-        {
-            "label": "build-debug",
-            "command": "make",
-            "args": ["debug"],
-            "type": "shell"
-        },
-        {
-            "label": "clean",
-            "command": "make",
-            "args": ["clean"],
-            "type": "shell"
-        }
+			"label": "build",
+			"command": "make",
+			"args": [
+				"default"
+			],
+			"type": "shell"
+		},
+		{
+			"label": "build-debug",
+			"command": "make",
+			"args": [
+				"debug"
+			],
+			"type": "shell"
+		},
+		{
+			"label": "clean",
+			"command": "make",
+			"args": [
+				"clean"
+			],
+			"type": "shell"
+		},
+		{
+			"type": "cppbuild",
+			"label": "C/C++: cpp.exe build active file",
+			"command": "D:\\C\\mingw64\\bin\\cpp.exe",
+			"args": [
+				"-g",
+				"${file}",
+				"-o",
+				"${fileDirname}\\${fileBasenameNoExtension}.exe"
+			],
+			"options": {
+				"cwd": "D:\\C\\mingw64\\bin"
+			},
+			"problemMatcher": [
+				"$gcc"
+			],
+			"group": "build",
+			"detail": "compiler: D:\\C\\mingw64\\bin\\cpp.exe"
+		}
 	]
 }
