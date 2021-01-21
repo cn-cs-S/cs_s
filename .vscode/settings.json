@@ -42,7 +42,11 @@
         "algorithm": "cpp",
         "cctype": "cpp",
         "string": "cpp",
-        "vector": "cpp"
+        "vector": "cpp",
+        "ctime": "cpp",
+        "iomanip": "cpp",
+        "xlocmon": "cpp",
+        "xloctime": "cpp"
     },
     "cmake.cmakePath": "/path/to/cmake",
     "powermode.enabled": true,

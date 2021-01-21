@@ -19,7 +19,14 @@ int main(){
         first = second - first;
         fib.push_back(second);
     }
+    /*
     for (auto r : fib)
         std::cout << r << std::endl;
+    */
+   for (std::vector<int>::iterator i = fib.begin(); i != fib.end(); i++)
+   {
+       std::cout << *i << std::endl;
+   }
+   
     return 0;
 }

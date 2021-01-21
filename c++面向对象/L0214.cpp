@@ -1,7 +1,10 @@
 #include<iostream>
 
+int aver = 10;
 int main(){
-    int n;
-    std::cin >> n;
-    std::cout << "local avar=25" << std::endl << "global avar=10";
+    int aver;
+    std::cin >> aver;
+    std::cout << "local avar=" << aver << std::endl;
+    std::cout << "global avar=10";
+    return 0;
 }
