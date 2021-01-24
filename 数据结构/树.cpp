@@ -171,7 +171,6 @@ int LeavesCount(BiTree T) {
     return LeavesCount(T->lchild) + LeavesCount(T->rchild);
 }
 
-
 //线索二叉树此处只给定义不给实现
 //线索二叉树是用空子树存储前驱后继的特殊二叉树
 //常见如, 左空子树存前驱, 右空子树存后继等
