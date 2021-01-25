@@ -4,7 +4,6 @@
  * 语言为c/c++
  * 注释比代码长系列
 */
-
 #include<iostream>
 using namespace std;
 
