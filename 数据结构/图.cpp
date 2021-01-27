@@ -172,6 +172,7 @@ void BFS(ALGragh G, int v) {
             visited[w->adjvex] = 1;
             w = w->nextarc;
         }
+        Q.pop();
     }
 }
 

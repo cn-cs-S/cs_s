@@ -5,9 +5,9 @@
         哈夫曼树:get
 
     图:
-        抽象类型定义
-        DFS
-        BFS
+        抽象类型定义:get
+        DFS:get
+        BFS:get
         
     p.s. 查找和排序可依赖STL模板库
     查找:
