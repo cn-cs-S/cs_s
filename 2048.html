@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2048</title>
+    <style>
+        .all {
+            width: 400px;
+            height: 400px;
+        }
+        div div {
+            font-size: 40px;
+            text-align: center;
+            line-height: 76px;
+            background-color: pink;
+            font-family:'Courier New', Courier, monospace;
+            color: #fff;
+            width: 80px;
+            height: 80px;
+            position: absolute;
+            left: 0px;
+            top: 0px;
+            margin: 10px;
+        }
+        #begin {
+            border-style: ridge;
+            border-radius: 10px;
+            border-color: pink;
+            padding: 30px;
+            font-size: 30px;
+            background-color: rgb(207, 255, 192);
+            color: pink;
+            cursor: pointer;
+        }
+        .bv-shadow-dom {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="all">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+    <button id="begin">开始游戏</button>
+    <script>
+        var box = document.querySelectorAll("div div");
+        for(var i = 0; i < 4; i++) {
+            for(var t = 0; t < 4; t++) {
+                box[i*4+t].style.left = t * 80 + 10 * t + "px";
+                box[i*4+t].style.top = i * 80 + 10 * i + "px";
+            }
+        }
+        var num = [2, 4];
+        var ele = document.querySelectorAll("div div");
+        
+        function game() {
+            begin();
+            create();
+        }
+        function begin() {
+            ele[Math.round(Math.random()*15)].innerHTML = num[Math.round(Math.random())];
+        }
+        function create() {
+            if (!isFull())
+                while(1) {
+                    var random = Math.round(Math.random()*15);
+                    if (ele[random].innerHTML == '') {
+                        ele[random].innerHTML = num[Math.round(Math.random())];
+                        break;
+                    }
+                }
+        }
+
+        function isFull() {
+            for (var i = 0; i < 16; i++) {
+                if (ele[i].innerHTML == '')
+                    return false;
+            }
+            return true;
+        }
+
+        function toOne(a, b) {
+            a.innerHTML = Number(a.innerHTML) + Number(b.innerHTML);
+            b.innerHTML = '';
+        }
+
+        function move(a, b) {
+            a.innerHTML = b.innerHTML;
+            b.innerHTML = '';
+        }
+
+        function left() {
+            var leap = false;
+            for(var i = 0; i < 4; i++) {
+                var index = -1;
+                for(var t = 0; t < 4; t++) {
+                    if (ele[i*4+t].innerHTML == '')
+                        continue;
+                    var j = t;
+                    while(j != index+1) {
+                        if (ele[i*4+j-1].innerHTML == '') {
+                            move(ele[i*4+j-1], ele[i*4+j]);
+                            leap = true;
+                        }
+                        else {
+                            if (ele[i*4+j-1].innerHTML ==  ele[i*4+j].innerHTML) {
+                                toOne(ele[i*4+j-1], ele[i*4+j]);
+                                index = j-1;
+                                leap = true;
+                            }
+                            break;
+                        }
+                        j--;
+                    }
+                }
+            }
+            return leap;
+        }
+
+        function right() {
+            var leap = false;
+            for(var i = 0; i < 4; i++) {
+                var index = 4;
+                for(var t = 3; t >= 0; t--) {
+                    if (ele[i*4+t].innerHTML == '')
+                        continue;
+                    var j = t;
+                    while(j != index-1) {
+                        if (ele[i*4+j+1].innerHTML == '') {
+                            move(ele[i*4+j+1], ele[i*4+j]);
+                            leap = true;
+                        }
+                        else {
+                            if (ele[i*4+j+1].innerHTML ==  ele[i*4+j].innerHTML) {
+                                toOne(ele[i*4+j+1], ele[i*4+j]);
+                                index = j+1;
+                                leap = true;
+                            }
+                            break;
+                        }
+                        j++;
+                    }
+                }
+            }
+            return leap;
+        }
+
+        function up() {
+            var leap = false;
+            for(var i = 0; i < 4; i++) {
+                var index = -1;
+                for(var t = 0; t < 4; t++) {
+                    if (ele[4*t+i].innerHTML == '')
+                        continue;
+                    var j = t;
+                    while(j != index+1) {
+                        if (ele[4*(j-1)+i].innerHTML == '') {
+                            move(ele[4*(j-1)+i], ele[j*4+i]);
+                            leap = true;
+                        }
+                        else {
+                            if (ele[4*(j-1)+i].innerHTML ==  ele[j*4+i].innerHTML) {
+                                toOne(ele[4*(j-1)+i], ele[j*4+i]);
+                                index = j-1;
+                                leap = true;
+                            }
+                            break;
+                        }
+                        j--;
+                    }
+                }
+            }
+            return leap;
+        }
+
+        function down() {
+            var leap = false;
+            for(var i = 0; i < 4; i++) {
+                var index = 4;
+                for(var t = 3; t >= 0; t--) {
+                    if (ele[4*t+i].innerHTML == '')
+                        continue;
+                    var j = t;
+                    while(j != index-1) {
+                        
+                        if (ele[4*(j+1)+i].innerHTML == '') {
+                            move(ele[4*(j+1)+i], ele[4*j+i]);
+                            leap = true;
+                        }
+                        else {
+                            if (ele[4*(j+1)+i].innerHTML ==  ele[4*j+i].innerHTML) {
+                                toOne(ele[4*(j+1)+i], ele[4*j+i]);
+                                index = j+1;
+                                leap = true;
+                            }
+                            break;
+                        }
+                        j++;
+                    }
+                }
+            }
+            return leap;
+        }
+        
+        document.onkeydown = function(e) {
+            
+            if (e && e.keyCode == 37) {
+                if(left())
+                    create();
+                return ;
+            }
+            if (e && e.keyCode == 39) {
+                if(right())
+                    create();
+            }
+            if (e && e.keyCode == 38) {
+                if(up())
+                    create();
+                return ;
+            }
+            if (e && e.keyCode == 40) {
+                if(down())
+                    create();
+                return ;
+            }
+        }
+
+        var btn = document.querySelector("#begin");
+        btn.onclick = function() {
+            for(var i = 0; i < 16; i++) {
+                ele[i].innerHTML = '';
+            }
+            game();
+        }
+    </script>
+</body>
+</html>

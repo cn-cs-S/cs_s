@@ -46,10 +46,38 @@
         "ctime": "cpp",
         "iomanip": "cpp",
         "xlocmon": "cpp",
-        "xloctime": "cpp"
+        "xloctime": "cpp",
+        "array": "cpp",
+        "*.tcc": "cpp",
+        "clocale": "cpp",
+        "cstdarg": "cpp",
+        "cwctype": "cpp",
+        "deque": "cpp",
+        "list": "cpp",
+        "unordered_map": "cpp",
+        "functional": "cpp",
+        "memory_resource": "cpp",
+        "optional": "cpp",
+        "string_view": "cpp",
+        "fstream": "cpp",
+        "sstream": "cpp",
+        "bitset": "cpp",
+        "map": "cpp",
+        "numeric": "cpp",
+        "regex": "cpp"
     },
     "cmake.cmakePath": "/path/to/cmake",
     "powermode.enabled": true,
     "files.autoGuessEncoding": true,
-    "maven.view": "flat"
+    "maven.view": "flat",
+    "python.pythonPath": "D:\\python\\python.exe",
+    "sqltools.connections": [
+        {
+            "previewLimit": 50,
+            "driver": "SQLite",
+            "name": "test.db",
+            "database": "${workspaceFolder:cs_s}/test.db"
+        }
+    ],
+    "sqltools.useNodeRuntime": true
 }

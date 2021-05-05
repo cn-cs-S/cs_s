@@ -7,6 +7,7 @@ int main() {
     int sum = 0;
     int huo = 0;
     int fir = 0;
+    
     while (getline(cin, str))
     {
         if (str == ".")
