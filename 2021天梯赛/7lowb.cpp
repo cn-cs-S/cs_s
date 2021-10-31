@@ -11,8 +11,7 @@ int main() {
         cin >> stu;
         if (stu > max) {
             max = stu;
-            up = 0;
-            ++up;
+            up = 1;
         }
         else if (stu == max) {
             ++up;
@@ -20,8 +19,7 @@ int main() {
         if (stu < min)
         {
             min = stu;
-            low = 0;
-            ++low;
+            low = 1;
         }
         else if (stu == min)
         {

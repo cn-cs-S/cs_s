@@ -13,7 +13,6 @@ int main()
     {
         string str;
         getline(cin, str);
-        
         if (str.find("easy") != -1 || str.find("qiandao") != -1)
             continue;
         else {

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="./logIn.css">
+    <!-- <link rel="javascript" href="../js/login.js"> -->
+    <title>登录</title>
+    <script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="./login.js"></script>
+</head>
+<body>
+    <header>
+
+    </header>
+    <main>
+        <div class="login">
+            <div>
+                <img src="../pic/B03AD9146BA65EFBDC29D632DEAAFBF4.jpg" alt="">
+                <span>计算机协会</span>
+                <form action="" method="POST" accept-charset="UTF-8" id="form" name="form" onsubmit="return false">
+                    <input type="text" name="username" placeholder="请输入账号" pattern="[0-9]">
+                    <input type="password" name="password" placeholder="密码" onkeyup="this.value=this.value.replace(/^\s+|\s+$/gm, '')">
+                    <div id="verfication">
+                        <input type="text" name="verfication" placeholder="请输入右侧图形验证码">
+                        <img src="../pic/captcha.jpg" alt="验证码" id="">
+                    </div>
+                    
+                    <input type="button" name="submit" id="submit" value="登录" onclick="login()">
+                </form>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div class="ad">
+            <a href="javascript: ;">加入我们</a>
+            <a href="javascript: '">计算机协会</a>
+        </div>
+    </footer>
+</body>
+</html>

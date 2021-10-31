@@ -1,0 +1,48 @@
+Coord 坐标类
+  public:
+    int getX();
+    int getY();
+  private:
+    int x;
+    int y;
+
+Block抽象基类
+  public:
+    move 控制移动
+        先判定是否撞上东西
+        处理坐标的移动
+    turn 控制旋转 virtual
+        turnleft 左旋
+        turnright 右旋
+    down 控制加速下落
+    toDown 直接下落
+    isWall 是否触碰到东西
+        isLorR 墙
+            这个好判定 找到最左右的就可以了
+        isDown
+            看是否有点的下面已经存在方块
+    print 打印方块
+    isDie 是否死亡 
+
+  protected:
+    shape 储存每个点的坐标
+
+T L square leftZ rightZ leftL rightL 继承Block
+
+game类
+  public:
+    menu 展示菜单
+    create 创建方块
+    deleteLine 删除一行
+    setDifficult 修改难度
+    getDifficult 获取难度
+    print 打印固定方块
+    printWall 打印四周墙
+  pravate:
+    map 地图
+    difficult 难度
+
+72 up
+80 down
+75 left
+77 right

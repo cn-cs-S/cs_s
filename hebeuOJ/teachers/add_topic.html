@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>管理题目</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/all.css">
+    <link rel="stylesheet" href="./home.css">
+    <link rel="stylesheet" href="./add_topic.css">
+    <script src="http://libs.baidu.com/jquery/2.0.0/jquery.js"></script>
+    <script src="./add_topic.js"></script>
+</head>
+<body>
+    <header></header>
+    <nav class="tool">
+        <div>
+            <a href="javascript: ;">管理题目</a>
+        </div>
+        <div>
+            <a href="javascript: ;">管理学生</a>
+        </div>
+        <div>
+            <a href="javascript: ;">测试工具</a>
+        </div>
+        <div>
+            <a href="javascript: ;">讨论区</a>
+        </div>
+    </nav>
+    <main>
+        <nav>
+            <a href="">添加题目</a>
+            <a href="">删除题目</a>
+        </nav>
+        <div>
+            <form action="#" name="topic" method="GET" onsubmit="return false" id="form" autocomplete="off">
+                <div>
+                    <label for="number">题号</label>
+                    <input type="text" id="number" name="number">
+                </div>
+                <div>
+                    <label for="title">题目</label>
+                    <input type="text" id="title" name="title">
+                </div>
+                <div>
+                    <label for="value">内容</label>
+                    <textarea id="value" name="value" form="form"></textarea>
+                </div>
+                <div>
+                    <div>测试用例 (默认以第一个为展示样例)</div>
+                    <div class="title"><span>输入</span> <span>输出</span></span></div>
+                    <div class="topic">
+                        <div>
+                            <input type="file" class="in" name="in">
+                            <input type="file" class="out" name="out">
+                        </div>
+                        <div>
+                            <input type="file" class="in" name="in">
+                            <input type="file" class="out" name="out">
+                        </div>
+                        <div>
+                            <input type="file" class="in" name="in">
+                            <input type="file" class="out" name="out">
+                        </div>
+                        <div>
+                            <input type="file" class="in" name="in">
+                            <input type="file" class="out" name="out">
+                        </div>
+                        <div>
+                            <input type="file" class="in" name="in">
+                            <input type="file" class="out" name="out">
+                        </div>
+                        <div>
+                            <input type="file" class="in" name="in">
+                            <input type="file" class="out" name="out">
+                        </div>
+                        <div>
+                            <input type="file" class="in" name="in">
+                            <input type="file" class="out" name="out">
+                        </div>
+                        <div>
+                            <input type="file" class="in" name="in">
+                            <input type="file" class="out" name="out">
+                        </div>
+                        <div>
+                            <input type="file" class="in" name="in">
+                            <input type="file" class="out" name="out">
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <button onclick="createTopic()">添加</button>
+                </div>
+            </form>
+        </div>
+    </main>
+</body>
+</html>

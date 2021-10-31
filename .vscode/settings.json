@@ -79,5 +79,6 @@
             "database": "${workspaceFolder:cs_s}/test.db"
         }
     ],
-    "sqltools.useNodeRuntime": true
+    "sqltools.useNodeRuntime": true,
+    
 }

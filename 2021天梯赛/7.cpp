@@ -25,7 +25,7 @@ int main()
     }
     for (int i = n-1; i >= 0; i--)
     {
-        if (stu[i - 1] == stu[i])
+        if (stu[i-1] == stu[i])
             ++up;
         else
             break;

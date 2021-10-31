@@ -208,10 +208,3 @@ using CSTree = CSNode*;
  * 3. 左分支标记0, 右分支标记1
  * 4. 根结点到叶子结点的路径上所有标记, 为该字符的编码
 */
-
-
-int main(int argc, char const *argv[])
-{
-    
-    return 0;
-}

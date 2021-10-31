@@ -1,0 +1,77 @@
+body {
+  background-color: rgb(239, 239, 239);
+}
+a {
+    text-decoration: none;
+}
+header {
+  height: 49px;
+}
+img {
+  user-select: none;
+  -webkit-user-drag: none;
+}
+.login {
+  width: 274px;
+  height: 479.453px;
+  background-color: white;
+  padding: 30px 50px;
+  margin: 40px auto;
+}
+.login img {
+  width: 200px;
+  margin: 0 37px;
+}
+.login span {
+  user-select: none;
+  display: block;
+  margin: 20px auto 40px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 10px;
+  text-align: center;
+  color: cornflowerblue;
+}
+.login input {
+  width: 275px;
+  height: 26px;
+  margin: 10px 0px;
+}
+#submit {
+  background-color: #3d98d8;
+  color: white;
+  height: 30px;
+}
+#verfication {
+  margin: 10px auto;
+}
+#verfication input {
+  margin: 0px;
+  width: 180px;
+  float: left;
+}
+#verfication img {
+  width: 85px;
+  margin: 0px 0px;
+  float: right;
+}
+#submit {
+  margin-top: 30px;
+}
+footer {
+    background-color: darkgrey;
+    height: 100px;
+    width: 98%;
+    position: absolute;
+    bottom: 0;
+}
+.ad a {
+    float: left;
+    color: #fbfbfb;
+    font-weight: 600;
+    margin: 10px 30px;
+}
+.ad a:active {
+    color: #fbfbfb;
+}

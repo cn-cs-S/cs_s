@@ -1,0 +1,60 @@
+header {
+    height: 80px;
+}
+
+.tool {
+    background-color: rgb(255, 255, 255);
+    float: left;
+    width: 150px;
+    margin: 20px auto;
+}
+
+.tool a {
+    display: block;
+    font-size: 20px;
+    padding: 20px;
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+
+}
+
+a:hover {
+    background-color: gray;
+}
+
+main {
+    /* background-color: white; */
+    margin-right: 20px;
+    margin-left: 171px;
+    margin-top: 20px;
+}
+
+main nav {
+    width: 100%;
+    height: 50px;
+    /* background-color: darkgrey; */
+    margin: 20px auto;
+    overflow: hidden;
+    background-color: #fff;
+}
+
+main nav a {
+    display: block;
+    font-size: 20px;
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+    float: left;
+    padding: 10px 20px;
+}
+
+main > div {
+    width: 100%;
+    margin: 20px auto;
+    background-color: #fff;
+    padding-top: 1px;
+}
+
+
+

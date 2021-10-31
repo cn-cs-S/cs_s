@@ -76,6 +76,7 @@ LinkList *creat(int n) //&创建链表函数
                 node->next = h;         //接next指针
                 leap = 0;
                 break; //^这里不需要后移尾指针
+                
             }
         }
         if (leap) //^若没操作则插入链表的最后面
